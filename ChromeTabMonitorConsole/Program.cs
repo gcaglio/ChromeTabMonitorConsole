@@ -58,8 +58,14 @@ namespace ChromeTabMonitorConsole
                 // Parse each line of the INI file
                 foreach (string line in lines)
                 {
+
+                    //avoid comments and empty lines and sections
+                    if (line.StartsWith("#") || line.Trim().Length==0 || line.StartsWith("["))
+                        continue;
+
                     // Split each line into key-value pairs using '=' as delimiter
                     string[] parts = line.Split('=');
+
 
                     // Ensure that the line is in correct format (key=value)
                     if (parts.Length == 2)
@@ -295,7 +301,29 @@ namespace ChromeTabMonitorConsole
             List<TabInfo> tabs = new List<TabInfo>();
             using (HttpClient client = new HttpClient())
             {
-                string url = "http://localhost:9227/json";
+
+                //string url = "http://localhost:9227/json";
+                
+                if (!settings.ContainsKey("rdp_url"))
+                {
+                    Console.WriteLine("ERROR : unable to find 'rdp_url' property in the settings file. Cannot start.");
+                    return tabs;
+                }
+
+                //append /json to get the open tabs
+                string url = settings["rdp_url"] + "/json";
+                bool isUrl = Uri.TryCreate(url, UriKind.Absolute, out Uri result);
+
+                if (!(isUrl && result != null && (result.Scheme == Uri.UriSchemeHttp || result.Scheme == Uri.UriSchemeHttps)))
+                {
+                    Console.WriteLine("ERROR : The string '"+url+"' is not a valid URL.");
+                    return tabs;
+                }
+
+                
+
+                // "rdp_url" exists and it seems to be an url, continue getting the pages
+
                 HttpResponseMessage response = client.GetAsync(url).Result;
                 if (response.IsSuccessStatusCode)
                 {
