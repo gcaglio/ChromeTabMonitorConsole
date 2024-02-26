@@ -1,5 +1,6 @@
 ## What is ChromeTabMonitorConsole
-ChromeTabMonitorConsole is a c# Console Application that helps you get "devtools" or "remote debugging protocol" performance data, Chrome console errors, render performance, etc.<br>
+ChromeTabMonitorConsole is a C# Console Application that helps you get "devtools" or "remote debugging protocol" performance data, Chrome console errors, render performance, etc.<br>
+This want to be the first step for a __Passive Real User-Experience monitoring__ application (Passive RUM).<br>
 You can collect in local fileystem and/or send to an ElasticSearch / Opensearch endpoint.<br>
 It allows you to collect data from remote Chrome or Edge browser in user PCs to analyze website errors or performance degradations.
 
@@ -17,7 +18,7 @@ To control the costs you may need to:
 <br>
 At this point we assumed that you can modify your application, choosing to enable the RUM components, choosing to enable the RUM only for some application and some (key/sample) users, but  __what if you can't choose?__ <br>
 <br>
-With the ChromeTabMonitorConsole I want to create a standard open source component that capture the metrics directly from the browser using DevTools protocol, enrich with some data and send back to a standard collector platform (ElasticSearch or OpenSearch, at the moment). Then you can implement the dashboard and explore the data as you like.<br>
+With the ChromeTabMonitorConsole I want to create a first version of open source __Passive RUM__ component to capture the metrics directly from the browser (using DevTools protocol), enrich data (tagging, hostname, userna, etc) and send to a standard collector platform (ElasticSearch or OpenSearch, at the moment). Then you can implement the dashboard and explore the data as you like.<br>
 
 ## What's next
 If you read the documentation and get a look on the data I actually get from the browser, you'll start understanding that there is a lot more to explore.<br>
