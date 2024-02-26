@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChromeTabMonitorConsole", "ChromeTabMonitorConsole\ChromeTabMonitorConsole.csproj", "{BE7F7113-F8FC-474F-871B-57083DF5ABE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE7F7113-F8FC-474F-871B-57083DF5ABE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE7F7113-F8FC-474F-871B-57083DF5ABE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE7F7113-F8FC-474F-871B-57083DF5ABE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE7F7113-F8FC-474F-871B-57083DF5ABE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72DC7A74-F40D-4472-89FA-6C234F79354D}
+	EndGlobalSection
+EndGlobal
